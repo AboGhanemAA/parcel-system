@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcel System - REST API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .api-endpoint {
+            background: #f5f5f5;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #0073e6;
+        }
+        code {
+            background: #e8e8e8;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📦 Parcel System REST API</h1>
+    
+    <p>Welcome to the Parcel System API. Use the following endpoints:</p>
+    
+    <div class="api-endpoint">
+        <h3>Create Parcel</h3>
+        <code>POST /api/parcels/</code>
+        <p>Create a new parcel in DRAFT status.</p>
+    </div>
+    
+    <div class="api-endpoint">
+        <h3>Get All Parcels</h3>
+        <code>GET /api/parcels/</code>
+        <p>Retrieve all parcels.</p>
+    </div>
+    
+    <div class="api-endpoint">
+        <h3>Get Parcel by ID</h3>
+        <code>GET /api/parcels/{id}</code>
+        <p>Retrieve a specific parcel.</p>
+    </div>
+    
+    <div class="api-endpoint">
+        <h3>Update Parcel</h3>
+        <code>PUT /api/parcels/{id}</code>
+        <p>Update a parcel (only in DRAFT status).</p>
+    </div>
+    
+    <div class="api-endpoint">
+        <h3>Delete Parcel</h3>
+        <code>DELETE /api/parcels/{id}</code>
+        <p>Delete a parcel (only in DRAFT status).</p>
+    </div>
+    
+    <div class="api-endpoint">
+        <h3>Push Status</h3>
+        <code>POST /api/parcels/{id}/push</code>
+        <p>Move parcel through business process statuses.</p>
+    </div>
+    
+    <h2>Status Flow</h2>
+    <p>DRAFT → VIEW_BY_TRANSPORTER → SENT → VIEW_BY_RECEIVER → COMPLETED</p>
+    
+    <h2>API Response Format</h2>
+    <pre><code>{
+    "success": true,
+    "message": "Operation message",
+    "data": { ... }
+}</code></pre>
+    
+    <p>Use <code>Accept: application/json</code> or <code>Accept: application/xml</code> headers.</p>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-deployment-structure xmlns="urn:jboss:deployment-structure:1.3">
+    
+    <deployment>
+        <!-- Exclude modules we want to use from application server -->
+        <exclusions>
+            <!-- Exclude Java EE APIs - we'll use server provided ones -->
+            <module name="javaee.api"/>
+            
+            <!-- Exclude Hibernate if we want to use server's version -->
+            <module name="org.hibernate"/>
+            
+            <!-- Exclude Jackson if we want server's version -->
+            <module name="com.fasterxml.jackson.core.jackson-core"/>
+            <module name="com.fasterxml.jackson.core.jackson-databind"/>
+            <module name="com.fasterxml.jackson.core.jackson-annotations"/>
+        </exclusions>
+        
+        <!-- Dependencies on server modules -->
+        <dependencies>
+            <!-- Java EE 8 APIs -->
+            <module name="javaee.api" export="true"/>
+            
+            <!-- Hibernate (JPA implementation) -->
+            <module name="org.hibernate" export="true"/>
+            
+            <!-- PostgreSQL JDBC Driver -->
+            <module name="org.postgresql" export="true"/>
+            
+            <!-- RESTEasy (JAX-RS implementation) -->
+            <module name="org.jboss.resteasy.resteasy-jaxrs" export="true"/>
+            <module name="org.jboss.resteasy.resteasy-jackson2-provider" export="true"/>
+            
+            <!-- CDI (Contexts and Dependency Injection) -->
+            <module name="javax.enterprise.api" export="true"/>
+            
+            <!-- JSON-P and JSON-B -->
+            <module name="javax.json.api" export="true"/>
+            <module name="javax.json.bind.api" export="true"/>
+            
+            <!-- JAXB for XML binding -->
+            <module name="javax.xml.bind.api" export="true"/>
+        </dependencies>
+    </deployment>
+</jboss-deployment-structure>

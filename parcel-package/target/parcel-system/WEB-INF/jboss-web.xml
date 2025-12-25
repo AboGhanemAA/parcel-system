@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web version="11.0"
+           xmlns="http://www.jboss.com/xml/ns/javaee"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.jboss.com/xml/ns/javaee
+           http://www.jboss.org/j2ee/schema/jboss-web_11_0.xsd">
+    
+    <!-- Context root for the application -->
+    <context-root>/parcel-system</context-root>
+    
+    <!-- Enable annotations scanning -->
+    <annotation-discovery enabled="true"/>
+    
+    <!-- Class loading configuration -->
+    <class-loading java2ClassLoadingCompliance="false">
+        <loader-repository>
+            com.parcel.system:archive=parcel-system.war
+            <loader-repository-config>
+                <loader-repository-name>com.parcel.system</loader-repository-name>
+            </loader-repository-config>
+        </loader-repository>
+    </class-loading>
+</jboss-web>

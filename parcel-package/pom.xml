@@ -37,6 +37,22 @@
             <version>4.0.4</version>
             <scope>provided</scope>
         </dependency>
+        
+        <!-- JAX-RS Implementation (RESTEasy) -->
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-jaxrs</artifactId>
+            <version>3.15.1.Final</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- Jackson for JSON -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-json-provider</artifactId>
+            <version>2.15.2</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
     
     <build>

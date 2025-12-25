@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns="http://www.jboss.org/ironjacamar/schema"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.jboss.org/ironjacamar/schema
+             http://docs.jboss.org/ironjacamar/schema/datasources_1_0.xsd">
+    
+    <!-- PostgreSQL Datasource -->
+    <datasource jndi-name="java:jboss/datasources/PostgreSQLDS"
+                pool-name="PostgreSQLDS"
+                enabled="true"
+                use-java-context="true">
+        
+        <connection-url>jdbc:postgresql://localhost:5432/parceldb</connection-url>
+        <driver>postgresql</driver>
+        <security>
+            <user-name>postgres</user-name>
+            <password>your_password</password>
+        </security>
+        
+        <!-- Connection pool settings -->
+        <pool>
+            <min-pool-size>5</min-pool-size>
+            <max-pool-size>20</max-pool-size>
+            <prefill>true</prefill>
+            <use-strict-min>false</use-strict-min>
+            <flush-strategy>IdleConnections</flush-strategy>
+        </pool>
+        
+        <!-- Timeouts -->
+        <timeout>
+            <blocking-timeout-millis>30000</blocking-timeout-millis>
+            <idle-timeout-minutes>5</idle-timeout-minutes>
+            <query-timeout>30</query-timeout>
+        </timeout>
+        
+        <!-- Validation -->
+        <validation>
+            <check-valid-connection-sql>SELECT 1</check-valid-connection-sql>
+            <validate-on-match>true</validate-on-match>
+            <background-validation>false</background-validation>
+            <background-validation-millis>60000</background-validation-millis>
+        </validation>
+        
+        <!-- Statement cache -->
+        <statement>
+            <share-prepared-statements>true</share-prepared-statements>
+        </statement>
+    </datasource>
+    
+    <!-- PostgreSQL Driver Definition -->
+    <drivers>
+        <driver name="postgresql" module="org.postgresql">
+            <driver-class>org.postgresql.Driver</driver-class>
+            <xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
+        </driver>
+    </drivers>
+</datasources>
