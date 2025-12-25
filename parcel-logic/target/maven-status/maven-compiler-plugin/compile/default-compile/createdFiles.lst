@@ -1,0 +1,8 @@
+com\parcel\system\model\Address.class
+com\parcel\system\model\Organization.class
+com\parcel\system\model\Credentials.class
+com\parcel\system\model\Person.class
+com\parcel\system\service\ParcelService$1.class
+com\parcel\system\service\ParcelService.class
+com\parcel\system\model\Parcel.class
+com\parcel\system\model\ParcelStatus.class

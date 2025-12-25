@@ -1,0 +1,6 @@
+com\parcel\system\config\JaxRsApplication.class
+com\parcel\system\dto\CreateParcelRequest.class
+com\parcel\system\dto\StatusUpdateRequest.class
+com\parcel\system\rest\ParcelResource.class
+com\parcel\system\dto\ParcelDTO.class
+com\parcel\system\dto\ApiResponse.class
